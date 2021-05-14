@@ -67,7 +67,7 @@
         "eslint-plugin-react": "^7.15.1",
         "eslint-plugin-standard": "^4.0.1",
         "glob": "^7.1.4",
-        "husky": "^3.0.9",
+        "husky": "^5.2.0",
         "react-scripts": "^3.1.2",
         "react-test-renderer": "^16.10.1",
         "react-to-typescript-definitions": "^2.0.0",
