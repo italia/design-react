@@ -45,7 +45,7 @@
         "@storybook/addon-storysource": "^5.3.21",
         "@storybook/addon-viewport": "^5.3.19",
         "@storybook/addons": "^5.3.21",
-        "@storybook/react": "^5.3.21",
+        "@storybook/react": "^6.1.21",
         "@svgr/cli": "^5.5.0",
         "@svgr/core": "^5.5.0",
         "@svgr/rollup": "^5.5.0",
