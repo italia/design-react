@@ -111,7 +111,7 @@
     "dependencies": {
         "prop-types": "^15.7.2",
         "react-scrollspy": "^3.3.5",
-        "react-select": "^3.0.8",
+        "react-select": "^4.3.0",
         "react-stickup": "^1.11.0",
         "react-transition-group": "^2.3.1",
         "reactstrap": "^8.0.0",
