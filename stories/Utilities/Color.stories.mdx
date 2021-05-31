@@ -1,0 +1,87 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+
+import { Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Utilities/Colori' />
+
+# Colori
+
+### Una serie di classi di utilità per applicare colori a testi e sfondi.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      Il colore è uno degli strumenti principali per la trasmissione delle
+      informazioni, ma non dimenticare mai di affiancare all’uso del colore
+      altri mezzi più espliciti. Leggi la sezione sull’
+      <a
+        href='https://docs.italia.it/italia/designers-italia/design-linee-guida-docs/it/stabile/doc/service-design/accessibilita.html#uso-del-colore'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        uso del colore
+      </a> delle Linee Guida di design per maggiori informazioni.
+    </CalloutText>
+  </Callout>
+</div>
+
+Bootstrap Italia eredita gli stessi meccanisimi per la gestione dei colori di Bootstrap 4.5.0, dove i colori del tema sono descritti attraverso una variabile Sass nominata `$theme-colors`.
+
+La principale novità introdotta da Bootstrap Italia è una serie di varianti della tonalità primaria primary basate sullo spazio colore <a href="https://it.wikipedia.org/wiki/Hue_Saturation_Brightness" target="_blank" rel="noopener noreferrer">HSB</a> (coincidente con il modello HSV).
+
+Questo permette di avere a disposizione 16 diverse varianti “monocromatiche” (in quanto hue e, in gran parte anche saturation rimangono invariate) che, essendo aggiunte alla lista di $theme-colors, sono disponibili per tutti quei componenti ed utilità che ne fanno uso, come ad esempio .text- e .bg-\*.
+
+Puoi trovare maggiori informazioni sulla palette di colori a disposizione alla pagina <LinkTo kind="documentazione-utilities-colori-custom--page">Colori Custom</LinkTo>.
+
+## Colore del testo
+
+<Canvas>
+  <Story name='colori-testo'>
+    <p class='p-3 mb-2 text-primary'>.text-primary</p>
+    <p class='p-3 mb-2 text-secondary'>.text-secondary</p>
+    <p class='p-3 mb-2 text-success'>.text-success</p>
+    <p class='p-3 mb-2 text-danger'>.text-danger</p>
+    <p class='p-3 mb-2 text-warning'>.text-warning</p>
+    <p class='p-3 mb-2 text-muted'>.text-muted</p>
+    <p class='p-3 mb-2 text-white bg-dark'>.text-white</p>
+  </Story>
+</Canvas>
+
+## Colore di sfondo
+
+Allo stesso modo di quanto avviene per il testo, le classi `bg-*` permettono di colorare lo sfondo di un elemento; le classi per gli sfondi non hanno alcun impatto sulla proprità color, per cui in alcuni casi sarà necessario affiancarle alle classi `.text-*`.
+
+<Canvas>
+  <Story name='colori-sfondo'>
+    <div class='p-3 mb-2 bg-primary text-white'>.bg-primary</div>
+    <div class='p-3 mb-2 bg-secondary text-white'>.bg-secondary</div>
+    <div class='p-3 mb-2 bg-success text-white'>.bg-success</div>
+    <div class='p-3 mb-2 bg-danger text-white'>.bg-danger</div>
+    <div class='p-3 mb-2 bg-warning text-white'>.bg-warning</div>
+    <div class='p-3 mb-2 bg-white text-dark'>.bg-white</div>
+  </Story>
+</Canvas>
+
+## Colore di sfondo con gradiente
+
+Bootstrap Italia eredita da Bootstrap la possibilità di avere sfondi con gradiente. Tale funzionalità non è però attiva, e va esplicitamente impostata attraverso la variabile SASS `$enable-gradients`, e ricompilando i file sorgente.
+
+Si possono trovare maggiori informazioni a riguardo sul <a href="https://getbootstrap.com/docs/4.5/utilities/colors/#background-gradient" target="_blank" rel="noopener noreferrer">sito di Bootstrap</a>.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>
+      Trasmettere significato alle tecnologie assistive
+    </CalloutTitle>
+    <CalloutText>
+      L’uso del colore per aggiungere un significato fornisce solo
+      un’indicazione visiva, che non sarà trasmesso agli utenti di tecnologie
+      assistive – come gli screen reader. Assicurati che le informazioni
+      denotate dal colore siano rese disponibili anche dal contenuto stesso
+      (es.: il testo visibile), o siano incluse attraverso mezzi alternativi,
+      come testo aggiuntivo nascosto con la classe <code>.sr-only</code>.
+    </CalloutText>
+  </Callout>
+</div>

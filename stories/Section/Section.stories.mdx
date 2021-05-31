@@ -1,0 +1,74 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Section } from '../../src';
+
+<Meta title='Documentazione/Componenti/Sections' of={Section} />
+
+# Sections
+
+## Per creare sezioni di layout orizzontale con differenti sfondi
+
+Per suddividere una pagina in blocchi orizzontali con sfondi differenti utilizzare più elementi `Section`.
+
+### Esempio
+
+Il componente Section ha un padding verticale ed orizzontale predefinito ed uno sfondo trasparente.
+
+<Preview>
+  <Story id='componenti-section--esempio' />
+</Preview>
+
+### Colori di sfondo
+
+Il componente Section ha, per default, uno sfondo trasparente. Aggiungendo le classi sottoelencate è possbile aggiungere colori di sfondo.
+
+#### Sfondo Tenue
+
+Al componente Section può essere applicato uno sfondo di colore tenue utilizzando l'attributo `color="muted"`.
+
+<Preview>
+  <Story id='componenti-section--sfondo-tenue' />
+</Preview>
+
+#### Sfondo Primario
+
+Aggiungendo invece l'attributo `color="primary"` si otterrà un sfondo del colore primario.
+
+Si consiglia di applicare la classe `.white-color` al `Container` (come da esempio) per garantire la leggibilità dei testi contenuti.
+
+<Preview>
+  <Story id='componenti-section--sfondo-primario' />
+</Preview>
+
+#### Sfondo Neutrale
+
+Aggiungendo invece l'attributo `color="neutral"` si otterrà un sfondo di colore corrispondente al primo dei colori neutrali.
+
+Si consiglia di applicare la classe `.white-color` al `Container` (come da esempio) per garantire la leggibilità dei testi contenuti.
+
+<Preview>
+  <Story id='componenti-section--sfondo-neutrale' />
+</Preview>
+
+#### Immagine di sfondo
+
+Aggiungendo l'attributo `image` e indicando l’URL dell’immagine da utilizzare la `Section` utilizzerà l’immagine indicata come sfondo, adattandone automaticamente le dimensioni per coprire l’intera Section.
+
+Si consiglia di applicare la classe `.white-color` al `Container` (come da esempio) per garantire la leggibilità dei testi contenuti.
+
+<Preview>
+  <Story id='componenti-section--immagine-di-sfondo' />
+</Preview>
+
+### Section con Card
+
+Per aggiungere una serie di card all’interno di una `Section `si consiglia di utilizzare un container con classe `.card-deck` per garantire un corretto margine fra gli elementi `Card`.
+
+<Preview>
+  <Story id='componenti-section--section-con-card' />
+</Preview>
+
+## Argomenti componente
+
+### Section
+
+<ArgsTable of={Section} />

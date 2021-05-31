@@ -1,1 +1,0 @@
-Aggiungi l’attributo `readOnly` ad un input per impedire la modifica del valore contenuto.

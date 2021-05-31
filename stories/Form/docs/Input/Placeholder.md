@@ -1,3 +1,0 @@
-Si può includere un’etichetta che si riposiziona automaticamente quando l’utente utilizza il campo di testo.
-* Si può abbinare all’etichetta un placeholder (testo di esempio) per ulteriore chiarezza.
-* In caso di necessità, è anche possibile utilizzare un ulteriore contenuto testuale sotto il campo di testo, aggiungendo un elemento `<small>` con classe `.form-text` all’interno di `.form-group`. Può essere esteso usando le classi di utilità come `.text-muted`.

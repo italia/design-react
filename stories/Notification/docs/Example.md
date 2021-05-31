@@ -1,1 +1,0 @@
-The notification can consist of a single title or a title accompanied by an icon, contained in `<h5>`the title tag . In this case , we can use the `NotificationWithIcon` component.

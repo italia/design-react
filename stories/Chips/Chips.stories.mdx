@@ -1,0 +1,54 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Chip, ChipLabel } from '../../src';
+
+<Meta title='Documentazione/Componenti/Chips' of={Chip} />
+
+# Chips
+
+### Elementi compatti che rappresentano un input, attributo o azione
+
+Una “chip” è composta da una label e, opzionalmente, un bottone di chiusura/rimozione, un’icona o un avatar.
+
+La versione con sola label deve centrario il testo al suo interno: utilizzare l'attributo `simple` sul componente `Chip` per ottenere il giusto layout.
+
+L’azione richiesta per l’eliminazione della chip andrà associata al componente `Button`.
+
+Assegnando l'attributo `large` sul componente `Chip` si ottiene una versione più grande del componente.
+
+<Preview>
+  <Story id='componenti-chips--esempi' />
+</Preview>
+
+### Varianti di colore
+
+Gli stili definiti da Bootstrap Italia utilizzano un naming consistente con Bootstrap:
+
+<Preview>
+  <Story id='componenti-chips--varianti-di-colore' />
+</Preview>
+
+### Chip Disabilitata
+
+Aggiungendo l'attributo `disabled` al componente si ottiene una chip disabilitata.
+
+<Preview>
+  <Story id='componenti-chips--chip-disabilitata' />
+</Preview>
+
+### Gruppi di Chip
+
+I gruppi di Chip vengono visualizzati in linea.
+
+<Preview>
+  <Story id='componenti-chips--gruppi-di-chip' />
+</Preview>
+
+## Argomenti componente
+
+## Chip
+
+<ArgsTable of={Chip} />
+
+### ChipLabel
+
+<ArgsTable of={ChipLabel} />

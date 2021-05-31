@@ -1,1 +1,0 @@
-Se per qualche motivo vuoi avere gli elementi `<InputLabel readonly>` nella forma stilizzata come testo normale usa la parola chiave `normalized`.

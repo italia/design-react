@@ -1,0 +1,53 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Icon } from '../../src';
+
+<Meta title='Documentazione/Utilities/Icone' of={Icon} />
+
+# Icone
+
+### Informazioni e suggerimenti per l’utilizzo di icone con Bootstrap Italia.
+
+Le icone di Bootstrap Italia utilizzano sono state incapsulate in un componente `Icon`..
+Per l’utilizzo delle icone è necessario che la sprite nella cartella `dist/svg` sia raggiungibile (spesso non è necessario fare nulla, a meno di configurazioni personalizzate).
+
+## Esempi
+
+Ogni icona può essere inclusa con il componente `Icon` con il riferimento desiderato:
+
+<Canvas>
+  <Story id='componenti-icon--esempio-interattivo' />
+</Canvas>
+
+## Dimensioni
+
+È possibile utilizzare il modificatore `size` con il valori `xs`, `sm`, `lg`, `xl`, per ottenere icone di diverse dimensioni.
+
+<Canvas>
+  <Story id='componenti-icon--esempio-dimensioni' />
+</Canvas>
+
+È anche possibile applicare il modificatore `padding` all’icona per creare un padding proporzionale alla dimensione dell’icona attorno ad essa.
+
+<Canvas>
+  <Story id='componenti-icon--esempio-padding' />
+</Canvas>
+
+## Colori
+
+<Canvas>
+  <Story id='componenti-icon--esempio-colori' />
+</Canvas>
+
+## Allineamenti
+
+È possibile usare le classi di allineamento per posizionare le icone all’interno di un elemento.
+
+<Canvas>
+  <Story id='componenti-icon--esempio-allineamento' />
+</Canvas>
+
+## Lista delle icone disponibili
+
+<Canvas withSource='none'>
+  <Story id='componenti-icon--lista-icone' />
+</Canvas>

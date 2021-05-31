@@ -1,1 +1,0 @@
-To create horizontal layout sections with different backgrounds.

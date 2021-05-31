@@ -1,0 +1,48 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Dimmer } from '../../src';
+
+<Meta title='Documentazione/Componenti/Dimmer' of={Dimmer} />
+
+# Dimmer
+
+## Un componente per focalizzare l’attenzione su un contenuto
+
+Un Dimmer occupa tutta l’altezza e la larghezza dell’elemento all’interno del quale è contenuto.
+
+### Esempio
+
+Il componente `Dimmer` può contenere del testo, che può essere preceduto da un'icona, come da esempio:
+
+<Preview>
+  <Story id='componenti-dimmer--esempi' />
+</Preview>
+
+#### Colore primario
+
+Impostando l'attributo `color="primary"` si ottiene una versione con sfondo di colore primario.
+
+<Preview>
+  <Story id='componenti-dimmer--colore-primario' />
+</Preview>
+
+### Dimmer con Azioni
+
+Un Dimmer può contenere tasti collegati ad azioni ed un titolo descrittivo.
+
+<Preview>
+  <Story id='componenti-dimmer--dimmer-con-azioni' />
+</Preview>
+
+#### Colore primario
+
+Impostando l'attributo `color="primary"` si ottiene una versione con sfondo di colore primario.
+
+<Preview>
+  <Story id='componenti-dimmer--dimmer-con-azioni-colore-primario' />
+</Preview>
+
+## Argomenti componente
+
+## Dimmer
+
+<ArgsTable of={Dimmer} />

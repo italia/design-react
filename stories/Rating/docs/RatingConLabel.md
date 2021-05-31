@@ -1,1 +1,0 @@
-Per visualizzare una label descrittiva aggiungere la prop `legend` passando o una stringa oppure un elemento JSX.

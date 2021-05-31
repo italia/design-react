@@ -1,1 +1,0 @@
-Questo esempio mostra come renderizzare più elementi `Chip` inline.

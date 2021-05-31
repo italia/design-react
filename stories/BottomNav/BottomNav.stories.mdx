@@ -1,0 +1,71 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import {
+  BottomNav,
+  BottomNavItem,
+  Callout,
+  CalloutTitle,
+  CalloutText
+} from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/BottomNav' of={BottomNav} />
+
+# BottomNav
+
+## Componente di navigazione per dispositivi mobile
+
+`BottomNav` è un componente pensato per la navigazione su dispositivi mobile il cui aspetto ricalca quello di alcune popolari app.
+
+Il componente, di altezza fissa, è ancorato la fondo della pagina e ne occupa tutta la larghezza.
+
+### Esempio
+
+È composto da un componente contenitore `BottomNav` e contiene un elenco con più elementi `BottomNavItem`.
+
+<Preview>
+  <Story id='componenti-bottomnav--esempi' />
+</Preview>
+
+I link occupano automaticamente tutto lo spazio disponibile. Qui di seguito un esempio con 4 link.
+
+<Preview>
+  <Story id='componenti-bottomnav--esempi-4-links' />
+</Preview>
+
+### Badge
+
+Aggiungere un attributo `badge` per visualizzare dei badge con indicazioni numeriche relative, ad esempio, al numero di messaggi non letti.
+
+<Preview>
+  <Story id='componenti-bottomnav--badge' />
+</Preview>
+
+### Alert
+
+Aggiungere un attributo `alert` per identificare una sezione che richiede attenzione o presenta nuovi contenuti.
+
+<div className='docs'>
+  <Callout color='warning'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      <p>
+        I badge e gli alert sono nascosti agli screen reader. Per garantire
+        l’accessibilità è necessario aggiungere un attributo <code>srText</code>{' '}
+        label che contenga un testo esplicativo.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-bottomnav--alert' />
+</Preview>
+
+## Argomenti componente
+
+### BottomNav
+
+<ArgsTable of={BottomNav} />
+
+### BottomNavItem
+
+<ArgsTable of={BottomNavItem} />

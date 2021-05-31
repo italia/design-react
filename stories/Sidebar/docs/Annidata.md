@@ -1,1 +1,0 @@
-La sidebar può contenere una [Lista di link](https://italia.github.io/bootstrap-italia/docs/organizzare-i-contenuti/liste-di-link/) primaria annidata.

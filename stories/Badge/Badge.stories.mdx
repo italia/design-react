@@ -1,0 +1,76 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Badge, Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Componenti/Badge' of={Badge} />
+
+# Badge
+
+## Documentazione e esempi del componente badge, utile per piccoli contatori e etichette.
+
+La grandezza di ogni badge si adatta come dimensione a quella del font (misurato in unità `em`) dell’elemento in cui è contenuto.
+
+<Preview>
+  <Story id='componenti-badge--esempi' />
+</Preview>
+
+I badge possono essere utilizzati come parte di link o pulsanti per fornire un contatore.
+
+<Preview>
+  <Story id='componenti-badge--contatore' />
+</Preview>
+
+A seconda di come i badge vengono utilizzati, questi potrebbero confondere gli utenti che usano lo screen reader e tecnologie assistive simili. Mentre lo stile dei badge fornisce un indizio visivo sul loro scopo, a questi utenti saranno semplicemente presentati come semplice contenuto. A seconda della situazione specifica, questi badge possono sembrare parole o numeri aggiuntivi casuali alla fine di una frase, un collegamento o un pulsante.
+
+A meno che il contesto non sia chiaro (come con l’esempio “Notifiche”, dove si capisce che il “4” è il numero di notifiche), considera l’eventualità di includere un testo aggiuntivo nascosto.
+
+<Preview>
+  <Story id='componenti-badge--contatore-testo-aggiuntivo' />
+</Preview>
+
+## Variazioni contestuali
+
+Utilizzare l'attributo `color` sul componente per modificare l’aspetto di un badge.
+
+<Preview>
+  <Story id='componenti-badge--variazioni' />
+</Preview>
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>
+      Trasmettere significato alle tecnologie assistive
+    </CalloutTitle>
+    <CalloutText>
+      <p>
+        L’uso del colore per aggiungere un significato fornisce solo
+        un’indicazione visiva, che non sarà trasmesso agli utenti di tecnologie
+        assistive – come gli screen reader. Assicurati che le informazioni
+        denotate dal colore siano rese disponibili anche dal contenuto stesso
+        (es.: il testo visibile), o siano incluse attraverso mezzi alternativi,
+        come testo aggiuntivo nascosto con la classe <code>.sr-only</code>.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+## Badges arrotondati
+
+Per rendere i badge arrotondati puoi usare l'attributo `pill` sul componente.
+
+<Preview>
+  <Story id='componenti-badge--bordi-arrotondati' />
+</Preview>
+
+## Link
+
+Per associare un Badge ad una navigazione, è possible inserire componenti di navigazione al suo interno, oppure sfruttare l'attributo `href`:
+
+<Preview>
+  <Story id='componenti-badge--con-link' />
+</Preview>
+
+## Argomenti componente
+
+### Badge
+
+<ArgsTable of={Badge} />

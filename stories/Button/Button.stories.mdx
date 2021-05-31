@@ -1,0 +1,139 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+import { Button, Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Componenti/Bottoni' of={Button} />
+
+# Bottoni
+
+## Bootstrap Italia definisce alcuni stili per i bottoni da utilizzare a seconda delle necessità
+
+### Utilizzo
+
+Per aggiungere un bottone personalizzato, è sufficiente utilizzare il componente `Button` ed i relativi attributi per applicarne le varianti di stile, dimensione, ecc.
+
+<Preview>
+  <Button>Link</Button>
+</Preview>
+
+Il componente `Button` è state pensato per essere utilizzate con l’elemento <code>&lt;button&gt;</code>. Tuttavia, è possibile applicare lo stile per i bottoni anche ad elementi di tipo <code>&lt;a&gt;</code> o <code>&lt;input&gt;</code>, anche se alcuni browser potrebbero mostrare un rendering lievemente diverso.
+
+In questi casi, non dimenticare di utilizzare in modo appropriato gli attributi `role="button"` per trasmettere il loro scopo alle tecnologie assistive.
+
+<Preview>
+  <Button tag='a' href='#' role='button'>
+    Link
+  </Button>
+  <Button type='submit'>Button</Button>
+  <Button tag='input' type='button' value='Input' />
+  <Button tag='input' type='submit' value='Submit' />
+  <Button tag='input' type='reset' value='Reset' />
+</Preview>
+
+## Varianti di colore
+
+Gli stili definiti da Bootstrap Italia utilizzano un naming consistente con Bootstrap, con alcune personalizzazioni:
+
+<Preview>
+  <Story id='componenti-button--varianti-colore' />
+</Preview>
+
+#### Note sullo stato disabilitato
+
+- I tag <code>&lt;a&gt;</code>non supportano l’attributo `disabled`, per cui è necessario usare la classe `.disabled` per farli apparire visivamente disabilitati, e in modo da disabilitare pointer-events su di essi sui browser che lo supportano.
+- I bottoni disabilitati includeranno l’attributo `aria-disabled="true"` per indicare lo stato dell’elemento alle tecnologie assistive.
+
+<div className='docs'>
+  <Callout color='warning'>
+    <CalloutTitle>Disabilitazione link</CalloutTitle>
+    <CalloutText>
+      <p>
+        La classe <code>.disabled</code> usa <code>pointer-events: none</code>{' '}
+        per provare a disabilitare l’attivazione dei comportamenti di default
+        dei link <code>&lt;a&gt;</code>, ma tale funzionalità non è gestita in
+        alcuni browsers. Oltre a questo, la navigazione attraverso tastiera
+        rimane abilitata, per cui utenti che utilizzano tecnologie assistive
+        saranno comunque in grado di attivare tali link. Per ovviare a questo
+        problema, è possibile aggiungere l’attributo <code>tabindex="-1"</code>{' '}
+        e utilizzare Javascript per disabilitare le loro funzionalità.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+#### Su sfondo scuro
+
+<Preview>
+  <Story id='componenti-button--sfondo-scuro' />
+</Preview>
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>
+      Trasmettere significato alle tecnologie assistive
+    </CalloutTitle>
+    <CalloutText>
+      <p>
+        L’uso del colore per aggiungere un significato fornisce solo
+        un’indicazione visiva, che non sarà trasmesso agli utenti di tecnologie
+        assistive – come gli screen reader. Assicurati che le informazioni
+        denotate dal colore siano rese disponibili anche dal contenuto stesso
+        (es.: il testo visibile), o siano incluse attraverso mezzi alternativi,
+        come testo aggiuntivo nascosto con la classe <code>.sr-only</code>.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+## Bottoni con icona
+
+E’ possibile aggiungere un’icona personalizzata al bottone con l'attributo `icon` in aggiunta nel componente `Button` e alle relative varianti cromatiche e di dimensione.
+
+<Preview>
+  <Story id='componenti-button--bottoni-con-icona' />
+</Preview>
+
+### Icona cerchiata
+
+Inoltre è possibile applicare un contorno cerchiato dell’icona utilizzando un contenitore con classe .rounded-icon da inserire all’interno della classe .btn con possibilità di personalizzazione del suo aspetto cromatico attraverso i modificatori .rounded-_ e .icon.icon-_.
+
+<Preview>
+  <Story id='componenti-button--bottoni-con-icona-cerchiata' />
+</Preview>
+
+<div className='docs'>
+  <Callout color='warning'>
+    <CalloutTitle>Allineamento e spaziatura dell’icona</CalloutTitle>
+    <CalloutText>
+      <p>
+        Nel caso si utilizzi un’icona cerchiata all’interno di un componente{' '}
+        <code>Button</code>, è necessario inserire il testo del bottone/link
+        all’interno di un tag <code>&lt;span&gt;</code> al fine di garantire un
+        perfetto allineamento ed una corretta spaziatura tra l’icona e lo stesso
+        testo.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+## Varianti di dimensione
+
+Per ottenere bottoni di dimensione più grande o più piccola, è sufficiente utilizzare l'attributo `size` con i valori `"lg"`, `"sm"`, `"xs"`.
+
+Utilizzando invece l'attributo `block` si ottengono invece bottoni che prendono tutta l’ampiezza a loro disposizione, a seconda delle dimensioni del loro contenitore. In questo caso, anche i bordi non sono più arrotondati.
+
+<Preview>
+  <Story id='componenti-button--varianti-di-dimensione' />
+</Preview>
+
+### Approfondimento
+
+È possibile provare a personalizzare live il componente `Button` presso <LinkTo kind="componenti-button--esempi-interattivi">l'esempio interattivo</LinkTo>.
+
+Per ulteriori informazioni sui bottoni si rimanda alla sezione `buttons` del sito [Reactstrap](https://reactstrap.github.io/components/buttons/), quindi di [Bootstrap](https://getbootstrap.com/docs/4.5/components/buttons/).
+
+## Argomenti componente
+
+### Button
+
+<ArgsTable of={Button} />

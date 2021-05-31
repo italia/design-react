@@ -1,0 +1,256 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+import {
+  AvatarIcon,
+  AvatarContainer,
+  AvatarGroupContainer,
+  AvatarWrapper,
+  AvatarStatus,
+  AvatarPresence,
+  AvatarExtraText,
+  Callout,
+  CalloutTitle,
+  CalloutText
+} from '../../src';
+
+<Meta title='Documentazione/Componenti/Avatar' />
+
+# Avatar
+
+## Rappresentazione grafica di un’immagine utente
+
+L’elemento Avatar è la rappresentazione grafica di un utente e può includere un’immagine, un testo, un’icona o un dropdown con ulteriori contenuti.
+
+Gli Avatar sono disponibili in sei diverse dimensioni:
+
+- xs con attributo `size="xs"`
+- sm con attributo `size="sm"`
+- md (dimensioni di default) `size="md"`
+- lg con attributo `size="lg"`
+- xl con attributo `size="xl"`
+- xxl con attributo `size="xxl"`
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità delle immagini</CalloutTitle>
+    <CalloutText>
+      <p>
+        Per ragioni di accessibilità è importante indicare all’interno
+        dell’Avatar il nome dell’utente associato allo stesso.
+      </p>
+      <p>
+        Nel caso di Avatar con immagine è consigliabile utilizzare l’attributo{' '}
+        <code>alt=""</code> della stessa.
+      </p>
+      <p>
+        Un Avatar con testo conterrà uno <code>&lt;span&gt;</code> per soli
+        screen reader con il nome dell’utente indicato per esteso:{' '}
+        <code>&lt;span class="sr-only"&gt;Nome Utente&lt;/span&gt;</code>.
+      </p>
+      <p>
+        Per gli Avatar con icona inserire un testo alternativo:{' '}
+        <code>&lt;span class="sr-only"&gt;Testo icona&lt;/span&gt;</code>.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+### Avatar con immagine
+
+L’Avatar ridimensiona automaticamente l’immagine adattandola al formato circolare e centrandola. Si consiglia in ogni caso di utilizzare immagini delle dimensioni corrette.
+
+<Preview>
+  <Story id='componenti-avatar--avatar-with-image' />
+</Preview>
+
+### Avatar con testo
+
+Avatar con testo
+
+La versione con testo contiene le iniziali dell’utente (una sola nel caso delle dimensioni xs ed sm). Oltre ai colori di default è possibile utilizzare uno sfondo a scelta fra:
+
+- Primario: aggiungendo l'attributo `color="primary"` al componente `AvatarIcon`
+- Secondario: aggiungendo l'attributo `color="secondary"` al componente `AvatarIcon`
+- Verde: aggiungendo l'attributo `color="green"` al componente `AvatarIcon`
+- Arancione: aggiungendo l'attributo `color="orange"` al componente `AvatarIcon`
+- Rosso: aggiungendo l'attributo `color="red"` al componente `AvatarIcon`
+
+In questi casi il testo sarà di colore bianco.
+
+<Preview>
+  <Story id='componenti-avatar--avatar-with-text' />
+</Preview>
+
+### Avatar con icona
+
+Per utilizzare un’icona all’interno degli Avatar è sufficiente includere il codice dell’icona prescelta dalla <LinkTo kind="documentazione-utilities-icone--page#lista-delle-icone-disponibili">libreria icone</LinkTo> e indicarne il colore con una delle classi disponibili.
+
+<Preview>
+  <Story id='componenti-avatar--avatar-with-icon' />
+</Preview>
+
+### Avatar Link
+
+Per associare un Avatar ad una navigazione, è possible inserire componenti di navigazione al suo interno, oppure sfruttare l'attributo `href`:
+
+<Preview>
+  <Story id='componenti-avatar--avatar-link' />
+</Preview>
+
+#### Avatar Link con Tooltip
+
+E’ possibile associare un Tooltip con maggiori informazioni relative all’utente o all’azione associata utilizzando il componente `Tooltip` del kit.
+
+<Preview>
+  <Story id='componenti-avatar--avatar-link-with-tooltip' />
+</Preview>
+
+## Gruppi di Avatar
+
+Gli Avatar possono essere raggruppati in liste verticali ed orizzontali.
+
+### Lista
+
+Utilizzando un componente `LinkList` con l'attributo `avatar` si ottiene una lista verticale con Avatar affiancati da link e testi.
+
+#### Lista piccola
+
+Lista verticale di Avatar di dimensione piccola con attributo `size="sm"`.
+
+<Preview>
+  <Story id='componenti-avatar-avatar-groups-list--avatar-small-list' />
+</Preview>
+
+#### Lista media
+
+Lista verticale di Avatar di dimensione media con attributo `size="md"`.
+
+<Preview>
+  <Story id='componenti-avatar-avatar-groups-list--avatar-media-list' />
+</Preview>
+
+### Avatar Sovrapposti
+
+Racchiudendo una serie di Avatar in un componente `AvatarGroupContainer` questi verranno visualizzati come una lista orizzontale in cui i singoli elementi sono parzialmente sovrapposti. In questo tipo di gruppo è possibile aggiungere un componente `Dropdown` per racchiudere ulteriori elementi Avatar.
+
+#### Avatar Sovrapposti Piccoli
+
+Gruppo di Avatar sovrapposti di dimensione piccola con attributo `size="xs"`.
+
+<Preview>
+  <Story id='componenti-avatar-avatar-groups-overlapping--small-overlapping-avatars' />
+</Preview>
+
+#### Avatar Sovrapposti Medi
+
+Gruppo di Avatar sovrapposti di dimensione media con attributo `size="md"`.
+
+<Preview>
+  <Story id='componenti-avatar-avatar-groups-overlapping--medium-overlaid-avatars' />
+</Preview>
+
+## Comportamento
+
+### Presenza utente
+
+Affiancando un componente `AvatarIcon` con il componente `AvatarPresence` all'interno di un componente `AvatarWrapper` si ottiene un indicatore dello stato di presenza dell’utente:
+
+- lo stato attivo si ottiene impostando l'attributo `presence` su `active`
+- lo stato non disponibile si ottiene aggiungendo l'attributo `presence` su `busy`
+- lo stato invisibile si ottiene aggiungendo l'attributo `presence` su `hidden`
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità della presenza</CalloutTitle>
+    <CalloutText>
+      <p>
+        Inserire un <code>&lt;span&gt;</code> riservato agli screen reader con
+        indicazione della presenza dell’utente nel componente{' '}
+        <code>AvatarPresence</code>.
+      </p>
+      <p>
+        Ad esempio:{' '}
+        <code>
+          &lt;span class="sr-only"&gt;Presenza: (stato presenza)&lt;/span&gt;
+        </code>
+        .
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-avatar-behavior--user-presence' />
+</Preview>
+
+### Status utente
+
+Affiancando un componente `AvatarIcon` con il componente `AvatarStatus` all'interno di un componente `AvatarWrapper` si ottiene un indicatore dello stato dell'account utente:
+
+- lo stato attivo si ottiene impostando l'attributo `status` su `approved`
+- lo stato non disponibile si ottiene aggiungendo l'attributo `status` su `declined`
+- lo stato invisibile si ottiene aggiungendo l'attributo `status` su `notify`
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità dello status</CalloutTitle>
+    <CalloutText>
+      <p>
+        Inserire un <code>&lt;span&gt;</code> riservato agli screen reader con
+        indicazione della presenza dell’utente nel componente{' '}
+        <code>AvatarStatus</code>.
+      </p>
+      <p>
+        Ad esempio:{' '}
+        <code>
+          &lt;span class="sr-only"&gt;Status: (stato utenza)&lt;/span&gt;
+        </code>
+        .
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-avatar-behavior--user-status' />
+</Preview>
+
+## Avatar con testo aggiuntivo
+
+Per ottenere una versione più completa dell’Avatar con nome esteso ed eventuale testo accessorio affiancare un componente `AvatarIcon` con il componente `AvatarExtraText`, in cui aggiungere il testo esteso, all'interno di un componente `AvatarWrapper`.
+
+Per il nome è possibile utilizzare i tag `<h3>` o `<h4>`. Il testo esteso può essere contenuto in un `<p>` o in un tag `<time>` nel caso di date/orari.
+
+<Preview>
+  <Story id='componenti-avatar--avatar-with-additional-text' />
+</Preview>
+
+## Argomenti componente
+
+### AvatarContainer
+
+<ArgsTable of={AvatarContainer} />
+
+### AvatarIcon
+
+<ArgsTable of={AvatarIcon} />
+
+### AvatarGroupContainer
+
+<ArgsTable of={AvatarGroupContainer} />
+
+### AvatarWrapper
+
+<ArgsTable of={AvatarWrapper} />
+
+### AvatarPresence
+
+<ArgsTable of={AvatarPresence} />
+
+### AvatarStatus
+
+<ArgsTable of={AvatarStatus} />
+
+### AvatarExtraText
+
+<ArgsTable of={AvatarExtraText} />

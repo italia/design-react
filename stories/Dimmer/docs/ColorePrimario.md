@@ -1,1 +1,0 @@
-Adding the prop `color="primary"` to the `<Dimmer>` will get you a Dimmer version with Primary color background.

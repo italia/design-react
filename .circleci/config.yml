@@ -32,7 +32,7 @@ aliases:
 defaults: &defaults
   docker:
     # specify the version you desire here
-    - image: circleci/node:12
+    - image: circleci/node:14
 
   working_directory: *working_directory
 
@@ -68,7 +68,7 @@ jobs:
           paths:
             - dist
 
-  generate_typings:
+  test:
     <<: *defaults
 
     steps:
@@ -79,19 +79,14 @@ jobs:
       - run: *npm_install
       - save_cache: *save_cache
 
-      - run:
-          name: Generate Typescript Typings
-          command: |
-            yarn typescript:dts
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: .
 
-      # Persist the specified paths (workspace/echo-output) into the workspace
-      # for use in downstream job. Must be an absolute path, or relative path
-      # from working_directory. This is a directory on the container which is
-      # taken to be the root directory of the workspace.
-      - persist_to_workspace:
-          root: *working_directory
-          paths:
-            - dist
+      - run:
+          name: Lint & Test
+          command: yarn lint && yarn test
+
             
   check-gatsby-ssr:
     <<: *defaults
@@ -177,15 +172,11 @@ workflows:
             tags:
               only: /.*/
 
-      - generate_typings:
-          # Note: The generate_typings job must also have a filters tags section, as it
-          # is a transient dependency of the deploy job.
+      - test:
           filters:
             branches:
               ignore:
-                  - gh-pages
-            tags:
-              only: /.*/
+                - gh-pages
 
       - check-gatsby-ssr:
           requires:
@@ -206,5 +197,4 @@ workflows:
       - npm-publish:
           requires:
             - build
-            - generate_typings
           filters: *tag_filters

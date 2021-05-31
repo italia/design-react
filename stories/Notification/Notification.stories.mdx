@@ -1,0 +1,80 @@
+import { ArgsTable, Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+import { Notification, Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Componenti/Notifiche' of={Notification} />
+
+# Notifiche
+
+## Per attirare l’attenzione su brevi messaggi di stato
+
+Il componente `Notification` viene utilizzato per portare l’attenzione dell’utente su un messaggio o un cambiamento di stato. Es: la ricezione di una nuova email.
+
+Lo stato naturale dell’elemento è invisibile. Gli esempi di questa pagina sono stati resi statici per facilitare un confronto fra le varie tipologie.
+
+<Canvas>
+  <Story id='componenti-notification--example' />
+</Canvas>
+
+### Notification con messaggio
+
+Si può aggiungere un breve testo al di sotto del titolo, questo verrà inserito in un tag <code>&lt;p&gt;</code>.
+
+<Canvas>
+  <Story id='componenti-notification--notification-with-message' />
+</Canvas>
+
+### Dismissable
+
+Le Notification Dismissable non vengono nascoste dopo un intervallo di tempo ma vengono chiuse solo quando si clicca sul rispettivo bottone di chiusura.
+
+<Canvas>
+  <Story id='componenti-notification--dismissable' />
+</Canvas>
+
+### Stati
+
+Alle Notification possono essere stilizzate in modo da determinare lo stato modificando il colore delle icone e del bordo, mediante l'attributo `state`:
+
+* `"success"` - per messaggi di procedure andate a buon fine
+* `"error"` - per messaggi di errore
+* `"info"` - per info generiche
+* `"warning"` - per messaggi di precauzione
+
+<Canvas>
+  <Story id='componenti-notification--states' />
+</Canvas>
+
+### Posizione e arrotondamento degli angoli
+
+La posizione predefinita della Notification è nella parte destra inferiore della finestra.
+
+Utilizzando l'attributo `fix` con i valori elencati di seguito la Notification verrà posizionata a filo di uno dei margini indicati, modificando l’arrotondamento degli angoli di conseguenza.
+
+*N.B. queste classi non influenzano il posizionamento su device mobile, in questo caso la Notification è sempre a piede della finestra e ne occupa tutta la larghezza*
+
+<Canvas>
+  <Story id='componenti-notification--rounding-of-corners' />
+</Canvas>
+
+### Posizione predefinita
+
+Posizionamento predefinito della Notification.
+
+<Canvas>
+  <Story id='componenti-notification--default-location' />
+</Canvas>
+
+### Posizione fissa
+
+Esempi delle quattro posizioni fisse possibili.
+
+<Canvas>
+  <Story id='componenti-notification--fixed-positions' />
+</Canvas>
+
+## Argomenti componente
+
+### Notification
+
+<ArgsTable of={Notification} />

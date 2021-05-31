@@ -1,0 +1,88 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+import {
+  // Components to include
+  Popover,
+  Callout,
+  CalloutTitle,
+  CalloutText
+} from '../../src';
+
+<Meta title='Documentazione/Componenti/Popover' of={Popover} />
+
+# Popover
+
+## Documentazione ed esempi per aggiungere popover (tooltip informativi) a qualsiasi elemento del tuo sito.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      <p>
+        I popover funzionano sia con la tastiera che per gli utenti dotati di
+        tecnologia assistiva. Allo stesso modo di quanto avviene per i{' '}
+        <LinkTo kind='documentazione-componenti-tooltip--page'>Tooltip</LinkTo>,
+        il codice generato per i Popover è accessibile.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+Cose da sapere quando si utilizza il plugin popover:
+
+- I title e i content con valori vuoti non mostreranno mai popover.
+- Attivare i popover su elementi nascosti non funzionerà.
+- I popover per gli elementi <code>.disabled</code> o <code>disabled</code> devono essere attivati da un elemento contenitore.
+- Quanto attivato da ancore che si estendono su più linee, i popover verranno centrati tra la larghezza complessiva delle ancore. Usa <code>white-space: nowrap;</code> sugli elementi <code>&lt;a&gt;</code> per evitare questo comportamento.
+
+### Esempi
+
+<Canvas>
+  <Story id='componenti-popover--esempi' />
+</Canvas>
+
+#### Direzioni
+
+Sono disponibili quattro opzioni: allineato in alto, a destra, in basso e a sinistra.
+
+<Canvas>
+  <Story id='componenti-popover--le-quattro-direzioni' />
+</Canvas>
+
+#### Titolo con icona e link
+
+È possibile aggiungere un’icona in testa al titolo ed un link in coda al contenuto.
+
+<Canvas>
+  <Story id='componenti-popover--titolo-con-icona-e-link' />
+</Canvas>
+
+#### Modalità Hover
+
+Per aprire il `Popover` all’hover del mouse sull’elemento è necessario impostare l'attributo `trigger` del componente su `"hover"`.
+
+<Canvas>
+  <Story id='componenti-popover--modalita-hover' />
+</Canvas>
+
+#### Chiusura al click successivo
+
+Usa l'attributo `trigger="focus"` per ignorare i popover sul clic successivo dell’utente di un elemento diverso rispetto all’elemento di attivazione / disattivazione.
+
+<Canvas>
+  <Story id='componenti-popover--dismiss-al-click-successivo' />
+</Canvas>
+
+#### Elementi disabilitati
+
+Elementi con l’attributo <code>disabled</code> non sono interattivi, il che significa che gli utenti non possono attivare il popover (o un tooltip) con il passaggio del mouse o facendo click su di essi.
+
+Come soluzione, ti consigliamo di attivare il `Popover` da un elemento <code>&lt;div&gt;</code> o <code>&lt;span&gt;</code> contenitore e sovrascrivere il <code>pointer-events</code> su un elemento disabilitato.
+
+<Canvas>
+  <Story id='componenti-popover--elementi-disabilitati' />
+</Canvas>
+
+## Argomenti componente
+
+Fare riferimento alla documentazione reactstrap per maggiori dettagli sui componenti `Popover` e `UncontrolledPopover`: https://reactstrap.github.io/components/popovers/

@@ -1,0 +1,105 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { Select } from '../../src';
+
+<Meta title='Documentazione/Form/Select' of={Select} />
+
+# Select
+
+### Il classico “menu a tendina”, in nuove varianti.
+
+La Select nelle sue varianti è basato su una libreria di terze parti, [react-select](https://react-select.com/).
+
+L'array di input usato per il componente `Select` in questo e per i successivi esempi è il seguente:
+
+```js
+const defaultOptions = [
+  { value: 'Value 1', label: 'Lorem ipsum dolor sit amet' },
+  { value: 'Value 2', label: 'Duis vestibulum eleifend libero' },
+  { value: 'Value 3', label: 'Phasellus pretium orci sed odio tempus' },
+  {
+    value: 'Value 4',
+    label: 'Vestibulum bibendum ex vel augue porttitor sodales'
+  },
+  { value: 'Value 5', label: 'Praesent quis elementum turpis' }
+];
+```
+
+## Select classica
+
+La select è composta dal un wrapper esterno con classe `.bootstrap-select-wrapper` seguita dalla label e dal componenente `Select`. Includendo la Select in questo modo, essa assumerà una serie di funzionalità descritte di seguito.
+
+<Canvas>
+  <Story id='componenti-form-select--select-classica' />
+</Canvas>
+
+## Select disabilitata
+
+Per disabilitare una select, aggiungere la _prop_ `isDisabled` al componente `Select.
+
+<Canvas>
+  <Story id='componenti-form-select--select-disabilitata' />
+</Canvas>
+
+## Select con reset
+
+Per creare l’opzione che resetterà i valori selezionati andremo ad inserire all'interno dei componenti personalizzati della `Select` un componente `ClearIndicator`.
+
+In aggiunta imposteremo l'attributo `isClearable={true}` per indicare che il campo può tornare nello stato iniziale.
+
+<Canvas>
+  <Story id='componenti-form-select--select-con-reset' />
+</Canvas>
+
+## Select con ricerca
+
+Per attivare la ricerca è sufficiente aggiungere l'attributo `isSearchable={true}` al componente `Select`.
+
+<Canvas>
+  <Story id='componenti-form-select--select-con-ricerca' />
+</Canvas>
+
+## Select Multipla
+
+Per attivare la multiselezione, aggiungere l'attributo `isMulti={true}` al componente `Select`.
+
+<Canvas>
+  <Story id='componenti-form-select--select-multipla' />
+</Canvas>
+
+## Select con gruppi
+
+Per le select con raggruppamenti il formato di input dei dati è leggermente diversa dal formato precedente:
+
+```js
+const groupOneOptions = [
+  { value: 'Value 1', label: 'Lorem ipsum dolor sit amet' },
+  { value: 'Value 2', label: 'Duis vestibulum eleifend libero' },
+  { value: 'Value 3', label: 'Phasellus pretium orci sed odio tempus' }
+];
+
+const groupTwoOptions = [
+  {
+    value: 'Value 4',
+    label: 'Vestibulum bibendum ex vel augue porttitor sodales'
+  },
+  { value: 'Value 5', label: 'Praesent quis elementum turpis' }
+];
+
+const groupedOptions = [
+  {
+    label: 'Gruppo 1',
+    options: groupOneOptions
+  },
+  {
+    label: 'Gruppo 2',
+    options: groupTwoOptions
+  }
+];
+```
+
+In aggiunta al formato diverso è necessario passare due componenti `GroupHeading` e `MenuList` aggiuntivi al componente `Select`:
+
+<Canvas>
+  <Story id='componenti-form-select--select-con-gruppi' />
+</Canvas>

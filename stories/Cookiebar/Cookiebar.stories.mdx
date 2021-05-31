@@ -1,0 +1,36 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { CookieBar, CookieBarButton } from '../../src';
+
+<Meta title='Documentazione/Componenti/CookieBar' of={CookieBar} />
+
+# CookieBar
+
+## Banner informativo sull’utilizzo dei cookie all’interno del sito web
+
+### Perché usarlo
+
+Come previsto inizialmente dal Provvedimento dell’8 maggio 2014 [sull’individuazione delle modalità semplificate per l’informativa e l’acquisizione del consenso per l’uso dei cookie](http://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/3118884), è necessario inserire una barra informativa per i cookie (in gergo **CookieBar**) qualora ci sia l’effettiva registrazione di dati personali.
+
+Per maggiori informazioni si rimanda alla pagina [www.garanteprivacy.it/cookie](http://www.garanteprivacy.it/cookie) dove sono raccolti documenti e informazioni utili.
+
+### Come usarlo
+
+Il kit fornisce un componente `CookieBar` da utilizzare.
+
+Esso può essere personalizzato nel testo a seconda delle necessità.
+
+È prevista la presenza di un bottone `CookieBarButton` per la chiusura della Cookiebar ed un ulteriore bottone `CookieBarButton` di approfondimento che dovrà portare alla pagina di gestione preferenze dei cookies.
+
+<Preview>
+  <Story id='componenti-cookiebar--come-usarlo' />
+</Preview>
+
+## Argomenti componente
+
+## CookieBar
+
+<ArgsTable of={CookieBar} />
+
+## CookieBarButton
+
+<ArgsTable of={CookieBarButton} />

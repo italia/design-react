@@ -1,1 +1,0 @@
-Per cambiare il tema della sidebar e renderla scura è sufficiente aggiungere al `<Sidebar>` la parola chiave `dark`.

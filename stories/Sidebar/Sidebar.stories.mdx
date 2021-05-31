@@ -1,0 +1,73 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+import { Sidebar } from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/Sidebar' of={Sidebar} />
+
+# Sidebar
+
+## Barra di navigazione laterale, include liste di link e liste di link innestate.
+
+### Basic sidebar
+
+#### Default
+
+La sidebar semplice può contenere:
+
+- Header
+- Lista di link primaria
+- Lista di link secondaria
+
+Per differenziare a livello stilistico i link secondari, è sufficiente aggiungere l'attributo `secondary` al componente `Sidebar` contenente la <LinkTo kind="documentazione-organizzare-i-contenuti-liste-di-link--page">lista di link</LinkTo>.
+
+<Preview>
+  <Story id='componenti-sidebar--basic-sidebar' />
+</Preview>
+
+#### Con icona
+
+La sidebar può contenere icone nella sua <LinkTo kind="documentazione-organizzare-i-contenuti-liste-di-link--page">lista di link</LinkTo> primaria.
+
+<Preview>
+  <Story id='componenti-sidebar--con-icona' />
+</Preview>
+
+#### Con linea a destra
+
+Per creare una sidebar con linea separatrice a destra è sufficiente aggiungere l'attributo `right` al componente `Sidebar`.
+
+<Preview>
+  <Story id='componenti-sidebar--con-linea-a-destra' />
+</Preview>
+
+#### Con linea a sinistra
+
+Per creare una sidebar con linea separatrice a sinistra è sufficiente aggiungere l'attributo `left` al componente `Sidebar`.
+
+<Preview>
+  <Story id='componenti-sidebar--con-linea-a-sinistra' />
+</Preview>
+
+### Annidata
+
+#### Default
+
+La sidebar può contenere una <LinkTo kind="documentazione-organizzare-i-contenuti-liste-di-link--page">lista di link</LinkTo> primaria annidata.
+
+<Preview>
+  <Story id='componenti-sidebar--annidata' />
+</Preview>
+
+### Sidebar versione scura
+
+Per cambiare il tema della sidebar e renderla scura è sufficiente aggiungere al componente `Sidebar` l'attributo `dark`.
+
+<Preview>
+  <Story id='componenti-sidebar--sidebar-versione-scura' />
+</Preview>
+
+## Argomenti componente
+
+### Sidebar
+
+<ArgsTable of={Sidebar} />

@@ -1,0 +1,146 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Componenti/Callout' of={Callout} />
+
+# Callout
+
+## Componente per evidenziare contenuti testuali
+
+I Callout posso essere utilizzati per evidenziare alcune parti del testo che richiedono particolare attenzione. Possono contenere messaggi di errore, avvertimento suggerimenti etc.
+
+### Esempi
+
+Il Callout basico è costituito da un contenitore `Callout`, un titolo contenuto in un `CalloutTitle` e un testo contenuto in uno o più tag `CalloutText`.
+
+<Preview>
+  <Story id='componenti-callout--esempio-basico' />
+</Preview>
+
+Al titolo può essere aggiunta un’icona a scelta fra quelle disponibili, avendo cura di nasconderla agli screen reader con la proprietà `aria-hidden="true"`.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      <p>
+        Nel caso l’icona comunicasse visivamente contenuti non disponibili nel
+        testo (ad esempio un allarme o una conferma) questa andrà affiancata da
+        un testo riservato agli screen reader:{' '}
+        <code>&lt;span class="sr-only"&gt;Testo alternativo&lt;/span&gt;</code>.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-callout--esempio-con-icona' />
+</Preview>
+
+Al Callout può essere aggiunta un attributo che determina il colore del bordo e del titolo. Le classi disponibili elencate qui di seguito.
+
+### Callout Success
+
+Aggiungere l'attributo `color="success"` per indicare una procedura andata a buon fine.
+
+<Preview>
+  <Story id='componenti-callout--procedura-avvenuta-con-successo' />
+</Preview>
+
+### Callout Warning
+
+Aggiungere l'attributo `color="warning"` per indicare una procedura o testo che richiede l’attenzione dell’utente.
+
+<Preview>
+  <Story id='componenti-callout--procedura-che-richiede-attenzione' />
+</Preview>
+
+### Callout Danger
+
+Aggiungere l'attributo `color="danger"` per indicare un errore o una procedura pericolosa o non consentita.
+
+<Preview>
+  <Story id='componenti-callout--procedura-pericolosa-o-non-consentita' />
+</Preview>
+
+### Callout Important
+
+Aggiungere l'attributo `color="important"` per attirare ulteriormente l’attenzione.
+
+<Preview>
+  <Story id='componenti-callout--procedura-importante' />
+</Preview>
+
+### Callout Note
+
+Aggiungere l'attributo `color="note"` per caratterizzare il Callout come una nota.
+
+<Preview>
+  <Story id='componenti-callout--callout-note' />
+</Preview>
+
+## Callout Highlights
+
+Aggiungere l'attributo `highlight` si ottiene una differente versione del Callout, con bordo solo sul lato sinistro.
+
+Per aumentare la dimensione di un paragrafo contenuto nel `CalloutText` aggiungere l'attributo `bigText` allo stesso.
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights' />
+</Preview>
+
+### Highlights Success
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights-success' />
+</Preview>
+
+### Highlights Warning
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights-warning' />
+</Preview>
+
+### Highlights Danger
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights-danger' />
+</Preview>
+
+### Highlights Important
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights-important' />
+</Preview>
+
+### Highlights Note
+
+<Preview>
+  <Story id='componenti-callout--callout-highlights-note' />
+</Preview>
+
+## Callout Approfondimento
+
+Il Callout di tipo Approfondimento, ottenibile aggiungendo l'attributo `detailed` al componente `Callout`, ha un aspetto radicalmente differente dagli altri stili disponibili ed è indicato per testi più estesi.
+
+Come da esempio, è possibile aggiungere ulteriore testo all’interno di un `Collapse` standard presente al fondo del contenuto.
+
+Il bottone di controllo del `Collapse` può essere affiancato da un link per download di PDF o altri tipi di documento, con relativa icona.
+
+<Preview>
+  <Story id='componenti-callout--callout-approfondimento' />
+</Preview>
+
+## Argomenti componente
+
+### Callout
+
+<ArgsTable of={Callout} />
+
+### CalloutTitle
+
+<ArgsTable of={CalloutTitle} />
+
+### CalloutText
+
+<ArgsTable of={CalloutText} />

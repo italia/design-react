@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title='Documentazione/Domande frequenti' />
+
+# Domande frequenti
+
+In questa sezione puoi trovare risposta ad alcune delle domande frequenti riguardo il kit.
+
+### Non trovo il componente X nel kit, ma questo è presente in Bootstrap Italia. Dove posso trovarlo?
+
+Siamo consapevoli che non tutti i componenti in Bootstrap Italia sono ancora presenti nel kit.
+C'è una lista di componenti ancora da completare per il kit [sul repository Github](https://github.com/italia/design-react-kit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement): se il componente richiesto non è stato ancora registrato, ti invitiamo a creare un ticket sulla pagina Github.
+Questo kit aspira a coprire interamente i componenti disponibili sul sito Bootstrap Italia, ma ancora non dispone di tutti i componenti necessari per una copertura al 100%.
+
+### Non trovo la documentazione completa del componente X nel kit, anche se ne esiste una storia/appare in una pagina della documentazione. Dove posso trovarlo?
+
+Se si tratta di un componente Bootstrap, probabilmente è possibile trovare maggiore documentazione sul sito [reactstrap](https://reactstrap.github.io/), cioè della libreria utilizzata da questo kit.
+Se si tratta di un componente Bootstrap Italia con documentazione mancante/parziale ti invitiamo ad aprire un ticket [sul repository Github](https://github.com/italia/design-react-kit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+
+### Il componente X ha uno stile diverso rispetto a quello in Bootstrap Italia. È un bug?
+
+Si. Ti invitiamo ad aprire un ticket [sul repository Github](https://github.com/italia/design-react-kit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+
+### Vorrei personalizzare l'aspetto dello stile standard Bootstrap Italia (i.e. colori, dimensioni, etc...)usando il kit. Come posso fare?
+
+Una guida completa su come personalizzare lo stile è possibile reperirla sul sito Bootstrap Italia nell'apposita pagina: [Personalizzazione della libreria](https://italia.github.io/bootstrap-italia/docs/come-iniziare/personalizzazione-della-libreria/). Poichè il kit ha una dipendenza unicamente sul css di Bootstrap Italia, è possibile importare il nuovo stile personalizzato come mostrato nell'esempio finale nella pagina.
+
+### I tipi Typescript del componente X non sono corretti. È un bug?
+
+Si. Ti invitiamo ad aprire un ticket [sul repository Github](https://github.com/italia/design-react-kit/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+
+### Cosa vuol dire che l'attributo o valore X è stato deprecato?
+
+Quando un attributo o valore viene segnato come `@deprecated` questo indica che dalla prossima versione major molto probabilmente non sarà più disponibile all'uso. Questi spesso però continuano a funzionare normalmente, mostrando solamente dei messaggi in console con indicazioni su come migrare al nuovo formato.
+Può succedere che alcuni cambiamenti segnalati come `@deprecated` smettano di funzionare per motivi tecnici: in questo caso controllare la pagina di changelog o la documentazione in cui viene spiegato il cambiamento di comportamento e le indicazioni necessarie per ripristinarlo. Queste modifiche sono comunque accompagante da un cambio di versione minor.
+
+### Il kit segue il sistema di versionamento "semantic"?
+
+Il kit cerca di seguire il più possibile il sistema di versionamento "semantic" nel formato `major.minor.patch` . In generale si tende a non imporre cambiamenti troppo repentini, provvedendo a fornire indicazioni di migrazione e/o documentazione adatta a supportare lo sviluppatore.

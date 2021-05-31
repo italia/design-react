@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { Input } from '../../src';
+
+<Meta title='Documentazione/Form/Radio Button' of={Input} />
+
+# Radio Button
+
+### Elementi e stili per la creazione di radio button accessibili
+
+<Canvas>
+  <Story id='componenti-form-radio--radio-base' />
+</Canvas>
+
+## Inline
+
+Per allineare orizzontalmente i campi radio basterà aggiungere la _prop_ `inline` al componente `FormGroup` padre.
+
+<Canvas>
+  <Story id='componenti-form-radio--radio-inline' />
+</Canvas>
+
+## Disabilitato
+
+Affinchè i campi radio risultino disabilitati occorrerà aggiungere la _prop_ `disabled` al componente `Input`.
+
+<Canvas>
+  <Story id='componenti-form-radio--radio-disabilitato' />
+</Canvas>
+
+## Gruppi
+
+Per poter raggruppare gli elementi radio occorrerà aggiungere al componente `FormGroup` la classe `.form-check-group`. L’elemento grafico di spunta verrà allineato alla destra del contenuto testuale.
+
+<Canvas>
+  <Story id='componenti-form-radio--radio-gruppi' />
+</Canvas>

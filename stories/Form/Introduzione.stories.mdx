@@ -1,0 +1,100 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { Callout, CalloutText, CalloutTitle } from '../../src';
+
+<Meta title='Documentazione/Form/Introduzione' />
+
+# Introduzione
+
+### Elementi e stili per la creazione di form accessibili e responsivi
+
+All’interno di un form, nella visualizzazione predefinita gli elementi sono allineati verticalmente, ma è possibile utilizzare classi aggiuntive per variare questo tipo di layout.
+
+Bootstrap Italia applica automaticamente a tutti i form `display: block` e `width: 100%`.
+
+## Organizzazione dei campi
+
+Per raggruppare correttamente gli elementi di un modulo form è bene utilizzare la classe .form-group per ogni singolo blocco, in questo modo l’elemento input, l’etichetta, il testo di aiuto opzionale e la messaggistica di validazione otterranno lo stile grafico e le funzionalità predisposte per loro. Puoi usarlo con <code>&lt;fieldset&gt;</code>, <code>&lt;div&gt;</code>o qualsiasi altro elemento.
+
+### Dimensionamento delle colonne
+
+Strutture più complesse possono essere costruite usando il sistema a griglia, da utilizzare per layout che richiedono più colonne, larghezze diverse e opzioni di allineamento aggiuntive. La classe `.form-row` ne assicura una corretta spaziatura.
+
+Puoi scegliere di dare una dimensione a una colonna, ad esempio dandogli un valore di `size={7}`, mentre le restanti `Col` si divideranno il resto dello spazio.
+
+<Canvas>
+  <Story id='componenti-form-form-layout--dimensionamento-colonne-base' />
+</Canvas>
+
+Ecco l’esempio di una struttura più complessa creata con il sistema a griglie.
+
+<Canvas>
+  <Story id='componenti-form-form-layout--dimensionamento-colonne-complesso' />
+</Canvas>
+
+### Auto-dimensionamento
+
+L’esempio seguente usa una delle utilità di flexbox per centrare verticalmente il contenuto e cambiando `.col` con `.col-auto` in modo che le colonne occupino solo lo spazio necessario. In altre parole, la colonna si dimensiona in base al contenuto. È possibile usarlo anche quando sono presenti altre colonne con dimensioni specifiche (es.: `col-sm-3`).
+
+<Canvas>
+  <Story id='componenti-form-form-layout--auto-dimensionamento' />
+</Canvas>
+
+<div className='docs'>
+  <Callout color='warning'>
+    <CalloutTitle>Alternative alle etichette nascoste</CalloutTitle>
+    <CalloutText>
+      Le tecnologie assistive come gli screenreader avranno problemi con i tuoi
+      moduli se non includi un’etichetta per ogni input. Per questi moduli in
+      linea, puoi nascondere le etichette usando la classe <code>.sr-only</code>
+      .Esistono altri metodi alternativi per fornire un’etichetta per le tecnologie
+      assistive, come l’attributo <code>aria-label</code>, <code>
+        aria-labelledby
+      </code> o <code>title</code>. Se nessuno di questi è presente, le tecnologie
+      assistive possono ricorrere all’uso dell’attributo
+      <code>placeholder</code>, se presente, ma è sconsigliato.
+    </CalloutText>
+  </Callout>
+</div>
+
+## Disabilitazione di campi
+
+Aggiungi l’attributo booleano `disabled` su un input per impedire le interazioni dell’utente e renderlo più chiaro.
+
+<Canvas>
+  <Story id='componenti-form-input--disabilitato' />
+</Canvas>
+
+### Disabilitazione di un intero form
+
+Aggiungi l’attributo disabled al <code>&lt;fieldset&gt;</code> per disabilitare tutti gli elementi del form contenuti.
+
+<Canvas>
+  <Story id='componenti-form-form-layout--form-disabilitato' />
+</Canvas>
+
+<div className='docs'>
+  <Callout color='warning'>
+    <CalloutTitle>Compatibilità Cross-browser</CalloutTitle>
+    <CalloutText>
+      Mentre Bootstrap applicherà questi stili in tutti i browser, Internet
+      Explorer 11 e successivi non supportano completamente l’attributo{' '}
+      <code>disabled</code> nel <code>&lt;fieldset&gt;</code>. Usa un JavaScript
+      personalizzato per disabilitare il fieldset in questi browser.
+    </CalloutText>
+  </Callout>
+</div>
+
+## Validazione
+
+Fornisci un feedback ai tuoi utenti con la validazione del form HTML5 disponibile nei browser supportati. Scegli tra le risposte di convalida predefinite del browser o implementa messaggi personalizzati con le classi integrate inizializzate con JavaScript.
+
+### Come funziona
+
+La validazione viene applicata tramite i due modificatori `valid` e `invalid`: come nella convenzione di `reactstrap` questi attivano delle classi CSS `is-valid` e `is-invalid` solo quando hanno un valore `true`.
+
+### Stili personalizzati
+
+<Canvas>
+  <Story id='componenti-form-form-validation--validazione-completa' />
+</Canvas>

@@ -1,0 +1,83 @@
+import { ArgsTable, Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { LinkList, LinkListItem } from '../../src';
+
+<Meta title='Documentazione/Organizzare i contenuti/LinkList' of={LinkList} />
+
+# Liste di link
+
+#### I Link List sono un componente flessibile e potente per la visualizzazione di una serie di link o call to action.
+
+## Single Line
+
+<Canvas>
+  <Story id='componenti-linklist--esempi' />
+</Canvas>
+
+## Single line - elemento con stato attivo
+
+Per determinare l’elemento attivo è sufficiente aggiungere il modificatore `active` al relativo componente `LinkListItem`
+
+<Canvas>
+  <Story id='componenti-linklist--stato-attivo' />
+</Canvas>
+
+## Single line - elemento con stato disabilitato
+
+Per determinare l’elemento attivo è sufficiente aggiungere il modificatore `disabled` al relativo componente `LinkListItem`
+
+<Canvas>
+  <Story id='componenti-linklist--stato-disabilitato' />
+</Canvas>
+
+## Single line con header e divider
+
+I link list possono avere un header (con o senza link) e/o divisori per separare gruppi di link
+L’header è costituito da un componente `LinkListItem` con il modificatore `header`.
+Il separatore è costituito dal componente `LinkListItem` con il modificatore `divider`.
+
+#### Header senza link
+
+<Canvas>
+  <Story id='componenti-linklist--header-e-divider-no-link' />
+</Canvas>
+
+#### Header con link
+
+<Canvas>
+  <Story id='componenti-linklist--header-e-divider-con-link' />
+</Canvas>
+
+## Sizing
+
+Per ogni componente `LinkListItem` è possibile definire una variante di dimensione maggiore utilizzando il modificatore `size`.
+
+<Canvas>
+  <Story id='componenti-linklist--sizing' />
+</Canvas>
+
+## Multiline
+
+È necessario usare il modificatore `multiline` sul componente `LinkList` in questo caso per configurare correttamente gli spazi del contenitore.
+Ogni componente `LinkListItem` può avere un icona (a destra o sinistra del testo) ed un abstract.
+**Icone**
+
+Per aggiungere un icona bisogna aggiungere al componente `LinkListItem` la classi:
+
+- `icon-right` : se si vuole posizionare l’icona a destra del testo
+- `icon-left` : se si vuole posizionare l’icona a sinistra del testo
+
+All’interno del componente `LinkListItem` subito dopo lo <code>&lt;span&gt;</code> contenente il testo, puoi inserire il componente `Icon` (per maggiori informazioni consulta la sezione icone).
+
+<Canvas>
+  <Story id='componenti-linklist--esempio-multiline' />
+</Canvas>
+
+## Argomenti componente
+
+### LinkList
+
+<ArgsTable of={LinkList} />
+
+### LinkListItem
+
+<ArgsTable of={LinkListItem} />

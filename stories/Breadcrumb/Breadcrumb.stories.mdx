@@ -1,0 +1,58 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Breadcrumb, Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/Breadcrumb' of={Breadcrumb} />
+
+# Breadcrumb
+
+## Indica la posizione della pagina corrente all’interno di una gerarchia di navigazione.
+
+Le breadcrumbs (in italiano, briciole di pane) mostrano la pagina corrente e danno la possibilità di risalire nella gerarchia delle pagine attraverso dei comodi link ai livelli superiori.
+
+Nelle breadcrumbs c’è la possibilità di scegliere il carattere da usare come separatore inserendolo all’interno del tag <code>&lt;span class="separator"&gt;</code>.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      <p>
+        Dato che le breadcrumb forniscono una navigazione, è buona idea
+        aggiungere un’etichetta significativa come l'attributo{' '}
+        <code>aria-label="breadcrumb"</code> per descrivere il tipo di
+        navigazione fornito nell’elemento <code>&lt;nav&gt;</code>. L'attributo{' '}
+        <code>aria-current="page"</code> viene invece inserito in automatico per
+        l'elemento <code>BreadcrumbItem</code> segnato come `active` per
+        indicare che rappresenta la pagina corrente.
+      </p>
+      <p>
+        Per maggiorni informazioni, guarda le [linee guida WAI-ARIA per la
+        creazione di
+        breadcrumb](https://www.w3.org/TR/wai-aria-practices/#breadcrumb).
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-breadcrumb--esempi' />
+</Preview>
+
+### Con icona
+
+Per aggiungere un icona all’elemento `BreadcrumbItem` è sufficiente inserire un componente `Icon` corrispondente prima del tag <code>&lt;a&gt;</code> con l’icona che si intende visualizzare.
+
+<Preview>
+  <Story id='componenti-breadcrumb--con-icone' />
+</Preview>
+
+### Su sfondo scuro
+
+Per la versione su sfondo scuro delle breadcrumbs è sufficiente aggiungere la classe `dark` all'attributo `listClassName` del componente `Breadcrumb`.
+
+<Preview>
+  <Story id='componenti-breadcrumb--su-sfondo-scuro' />
+</Preview>
+
+## Argomenti componente
+
+Per ulteriori informazioni sui breadcrumbs si rimanda alla sezione `breadcrumbs` del sito [Reactstrap](https://reactstrap.github.io/components/breadcrumbs/).

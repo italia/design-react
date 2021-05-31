@@ -1,0 +1,73 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Tooltip, Callout, CalloutTitle, CalloutText } from '../../src';
+
+<Meta title='Documentazione/Componenti/Tooltip' of={Tooltip} />
+
+# Tooltip
+
+## Documentazione ed esempi per aggiungere tooltip personalizzati
+
+I Tooltip di reactstrap con CSS e JavaScript utilizzano CSS3 per animazioni e attributi per l’archiviazione di titoli locali.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>
+      Accessibiltà: I tooltip funzionano sia con la tastiera che per gli utenti
+      dotati di tecnologia assistiva.
+    </CalloutTitle>
+    <CalloutText>
+      <p>
+        È importante aggiungere tooltip solo ad elementi HTML che sono
+        tradizionalmente attivabili da tastiera e interattivi (link, bottoni, o
+        elementi di form).
+      </p>
+      <p>
+        Sebbene arbitrariamente gli elementi HTML (come{' '}
+        <code>&lt;span&gt;</code>) possano essere resi attivabili tramite
+        l’attributo <code>tabindex="0"</code>, ciò aggiungerà interruzioni di
+        tabulazioni potenzialmente dannose per gli utenti che usano la tastiera
+        per navigare. Inoltre, la maggior parte delle tecnologie assistive in
+        questa situazione non annuncia il tooltip come ci si potrebbe invece
+        attendere.
+      </p>
+      <p>
+        Infine, non fare affidamento esclusivamente sull’evento “mouse over”
+        come innesco del tooltip, in quanto ciò renderà impossibile
+        l’attivazione per gli utenti che usano la tastiera per navigare.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+Cose da sapere quando usi il plugin tooltip:
+
+- I tooltip si basano sulla libreria di terze parti `Popper.js`.
+- I tooltip con titoli vuoti non saranno mai visualizzati.
+- Attivare i tooltip su elementi nascosti non funzionerà.
+- I tooltip per gli elementi `.disabled` o `disabled` devono essere attivati da un elemento contenitore.
+- Quando attivati da collegamenti ipertestuali che si estendono su più righe, i tooltip verranno centrati. Usa `white-space: nowrap;` sui tuoi <code>&lt;a&gt;</code> per evitare questo comportamento.
+
+Il kit fornisce due tipologie di componenti per mostrare tooltip, ereditandoli da `reactstrap`: `Tooltip` e `UncontrolledTooltip`.
+Per la maggior parte dei casi `UncontrolledTooltip` fornisce tutte le funzionalità richieste senza dove controllare esplicitamente lo stato del componente. Per situazioni più sofisticate dove è richiesta la gestione dello stato utilizzare il componente `Tooltip`.
+
+Passa il mouse sopra i link sottostanti per visualizzare i tooltip (con `UncontrolledTooltip`):
+
+<Preview>
+  <Story id='componenti-tooltip--esempi' />
+</Preview>
+
+Qui trovi lo stesso esempio utilizzando il componente `Tooltip` con la gestione esplicita dello stato:
+
+<Preview>
+  <Story id='componenti-tooltip--esempi-con-controllo' />
+</Preview>
+
+Passa il mouse sopra i bottoni sottostanti per vedere le quattro direzioni dei tooltip: sopra, destra, sotto, e sinistra.
+
+<Preview>
+  <Story id='componenti-tooltip--posizioni' />
+</Preview>
+
+## Argomenti componente
+
+Fare riferimento alla documentazione reactstrap per maggiori dettagli sui componenti `Tooltip` e `UncontrolledTooltip`: https://reactstrap.github.io/components/tooltips/

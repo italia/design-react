@@ -1,1 +1,0 @@
-Aggiungendo la prop `disabled` al componente `Chip` viene renderizzata una versione disabilitata del componente `Chip`.

@@ -1,0 +1,159 @@
+import { ArgsTable, Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import {
+  Header,
+  Headers,
+  HeaderContent,
+  HeaderLinkZone,
+  HeaderRightZone,
+  HeaderBrand,
+  HeaderSearch,
+  HeaderSocialsZone,
+  HeaderToggler
+} from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/Header' of={Header} />
+
+# Header
+
+## Documentazione ed esempi per la creazione di una testata di navigazione.
+
+L’header di un sito della Pubblica Amministrazione è solitamente composto di 3 elementi principali:
+
+- Un cosiddetto “_Slim header_”, una sottile fascia dello stesso colore o, preferibilmente, di colore lievemente più scuro rispetto al tema principale del sito, che mostra alcuni link funzionali con impatto globale o esterno al sito stesso.
+- Una parte centrale “_Center header_“ che identifica in modo chiaro il sito attraverso logo, testo e social, e può contenere un link per effettuare ricerche sul sito.
+- Una parte dedicata alla navigazione “_Nav header_“, visibile su schermi di grandi dimensioni ed accessibile attraverso il classico bottone di tipo “burger menu” per dispositivi mobili.
+
+### Slim header
+
+Lo _Slim header_ header mostra un’intestazione, solitamente con riferimento all’ente di appartenenza del progetto o riferimenti utili, oltre ad un eventuale menu per il cambio lingua e l’accesso ad area riservata. Il cambio lingua è gestito con il componente dropdown.
+
+<Canvas>
+  <Story id='componenti-header--header-slim' />
+</Canvas>
+
+#### Right action con bottone full responsive
+
+Per trasformare il bottone di action situato nella `HeaderRightZone` e renderlo full-responsive è sufficiente applicare la prop `size="full"` al link/bottone.
+
+Il modificatore `"full"` è disponibile anche con il tema chiaro attivato da .theme-light.
+
+<Canvas>
+  <Story id='componenti-header--slim-header-with-full-button' />
+</Canvas>
+
+#### Versione chiara
+
+Per cambiare tema all’header slim è sufficiente aggiungere il modificatore `theme="light"` al componente `Header` di tipo `slim`.
+
+<Canvas>
+  <Story id='componenti-header--header-slim-light' />
+</Canvas>
+
+### Header Centrale
+
+L'_Header centrale_, per mostrare il logo dell’ente e la sua descrizione, dei link aggiuntivi ai social media, l’accesso al motore di ricerca, se presente.
+
+<Canvas>
+  <Story id='componenti-header--header-center' />
+</Canvas>
+
+#### Versione stretta
+
+Per utilizzare la versione più stretta dell’header centrale è sufficiente aggiungere l'attributo `small` al componente `Header` di tipo `center`.
+
+<Canvas>
+  <Story id='componenti-header--header-center-narrow' />
+</Canvas>
+
+#### Versione chiara
+
+Per cambiare tema all’header centrale è sufficiente aggiungere l'attributo `theme="light"`.
+
+<Canvas>
+  <Story id='componenti-header--header-center-narrow-light' />
+</Canvas>
+
+### Header Nav
+
+_Header Nav_, per elencare le voci di navigazione, siano esse semplici link, menu a tendina oppure un Megamenu a tutta larghezza.
+
+<Canvas>
+  <Story id='componenti-header--header-nav' />
+</Canvas>
+
+L’_Header Nav_ ha due versioni, una chiara (“light”) e una scura (“dark”). Lo stile di default ha differenti caratteristiche colore a seconda della versione desktop e mobile:
+
+- Su Desktop lo stile di default ha un background di colore primario e link bianchi. Gli elementi `Dropdown` e Megamenu hanno background bianco, testi neri e link di colore primario.
+- Su Mobile lo stile di default ha un background bianco e testi e link di colore primario.
+
+Per modificare la versione dell’Header Nav è sufficiente utilizzare la classe `theme` con i valori `"dark"` o `"light"`.
+
+#### Versione chiara
+
+<Canvas>
+  <Story id='componenti-header--header-nav-light' />
+</Canvas>
+
+#### Navigazione secondaria
+
+Al menù di navigazione principale può essere aggiunto anche un menù di navigazione secondario aggiungendo l'attributo `secondary` al componente `Nav`, contenente una seconda lista e la stessa struttura dati della lista `Nav` principale.
+
+<Canvas>
+  <Story id='componenti-header--header-nav-secondary' />
+</Canvas>
+
+### Header Completa
+
+Combinando i tre header sopra descritti è possibile creare un _Header completo_.
+
+<Canvas>
+  <Story id='componenti-header--header-complete' />
+</Canvas>
+
+#### Versione chiara
+
+<Canvas>
+  <Story id='componenti-header--header-complete-light' />
+</Canvas>
+
+#### Header sticky
+
+Affinché la testata rimanga parzialmente visibile anche allo scorrere della pagina, è sufficiente utilizzare l'attributo `sticky` nel componente contenitore `Headers`.
+
+### Argomenti componente
+
+#### Header
+
+<ArgsTable of={Header} />
+
+#### Headers
+
+<ArgsTable of={Headers} />
+
+#### HeaderContent
+
+<ArgsTable of={HeaderContent} />
+
+#### HeaderBrand
+
+<ArgsTable of={HeaderBrand} />
+
+#### HeaderToggler
+
+<ArgsTable of={HeaderToggler} />
+
+#### HeaderLinkZone
+
+<ArgsTable of={HeaderLinkZone} />
+
+#### HeaderRightZone
+
+<ArgsTable of={HeaderRightZone} />
+
+#### HeaderSearch
+
+<ArgsTable of={HeaderSearch} />
+
+#### HeaderSocialsZone
+
+<ArgsTable of={HeaderSocialsZone} />

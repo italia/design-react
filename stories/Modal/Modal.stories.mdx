@@ -1,0 +1,25 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Modal } from '../../src';
+
+<Meta title='Documentazione/Componenti/Modale' component={Modal} />
+
+# Modale
+
+Gli avvisi sono disponibili in quattro tipologie diverse e per qualsiasi lunghezza di testo. Inoltre possono prevedere un pulsante di chiusura
+
+### Componenti della modale
+
+In basso un esempio di una modale statica, senza componente principale `Modal`. Sono inclusi l’intestazione, il corpo, e il footer della modale.
+È richiesta l’inclusione di intestazioni o elementi con funzione di chiusura della modale stessa.
+
+<Preview>
+  <Story id='componenti-modal--esempi' />
+</Preview>
+
+<Preview>
+  <Story id='componenti-modal--contenuto-della-modale-variabile' />
+</Preview>
+
+## Argomenti componente
+
+<ArgsTable of={Modal} />

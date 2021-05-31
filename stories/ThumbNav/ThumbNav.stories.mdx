@@ -1,0 +1,148 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import {
+  ThumbNav,
+  ThumbNavItem,
+  Callout,
+  CalloutTitle,
+  CalloutText
+} from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/Thumbnav' of={ThumbNav} />
+
+# ThumbNav
+
+## Componente di navigazione con immagini thumbnail
+
+Il componente Thumbnav consiste in un contenitore `ThumbNav` contenente tanti elementi `ThumbNavItem` quante sono i link/thumbnail richiesti.
+
+Ogni elemento `ThumbNavItem` contiene un resizer per mantenere le corrette proporzioni di 3:2 a prescindere dalle dimensioni dell’immagine utilizzata per la thumbnail.
+
+Per indicare il link/thumbail attivo applicare l'attributo `active` al relativo `ThumbNavItem`.
+
+<div className='docs'>
+  <Callout color='success'>
+    <CalloutTitle>Accessibilità</CalloutTitle>
+    <CalloutText>
+      <p>
+        Per ragioni di accessibilità è importante indicare all’interno
+        dell’attributo <code>alt=""</code> dell’immagine thumbnail l’azione
+        associata al link relativo.
+      </p>
+    </CalloutText>
+  </Callout>
+</div>
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio' />
+</Preview>
+
+### Versione small
+
+Applicando l'attributo `isSmall` al contenitore `ThumbNav` si otterranno thumbnail di dimensione ridotta.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-small' />
+</Preview>
+
+### Stati hover
+
+Applicando attributi specifici è possibile customizzare l’effetto di hover.
+
+#### Hover senza zoom
+
+Utilizzare l'attributo `noZoomOnHover` per disabilitare l’effetto di zoom sull’immagine.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-no-zoom' />
+</Preview>
+
+#### Hover con layer nero
+
+Utilizzare l'attributo `overlayOnHover="black"` per ottenere un effetto di overlay nero trasparente sull’immagine.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-black-layer' />
+</Preview>
+
+#### Hover con layer primary
+
+Utilizzare l'attributo `overlayOnHover="primary"` per ottenere un effetto di overlay di colore primary sull’immagine.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-primary-layer' />
+</Preview>
+
+### Thumbnav verticale
+
+Applicando l'attributo `isVertical` al contenitore `ThumbNav` si ottiene una versione verticale.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-verticale' />
+</Preview>
+
+### Posizione in overlay
+
+La `ThumbNav `può essere inserita in overlay all’interno di un contenitore come ad esempio una galleria immagini. Il contenitore dovrà utilizzare la classe di Bootstrap `.position-relative` per posizionare correttamente la `ThumbNav` al proprio interno. Alla `ThumbNav` dovrà essere applicato un attributo `position` con valore a scelta fra:
+
+- `bottom` per posizonarla nella parte inferiore
+- `top` per posizonarla nella parte superiore
+- `left` per posizonare una thumbnav vertical nella parte sinistra
+- `right` per posizonare una thumbnav vertical nella parte destra
+
+#### Overlay orizzontale inferiore
+
+<Preview>
+  <Story id='componenti-thumbnav--overlay-bottom' />
+</Preview>
+
+#### Overlay orizzontale top
+
+<Preview>
+  <Story id='componenti-thumbnav--overlay-top' />
+</Preview>
+
+#### Overlay verticale sinistra
+
+<Preview>
+  <Story id='componenti-thumbnav--overlay-left' />
+</Preview>
+
+#### Overlay verticale destra
+
+<Preview>
+  <Story id='componenti-thumbnav--overlay-right' />
+</Preview>
+
+### Griglia a larghezza fissa
+
+Applicando l'attributo `fixedWidth` alla `ThumbNav` le thumbnail avranno una larghezza fissa di 240px oppure di 120px se è stata utilizzata anche l'attributo `isSmall`.
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-fixed' />
+</Preview>
+
+#### Griglia a larghezza automatica
+
+Applicando la classe .thumb-nav-auto alla Thumbnav le thumbnail occuperanno automaticamente l’intera larghezza del contenitore. È necessario indicare il numero degli elementi presenti su ogni riga con una delle seguenti classi aggiuntive:
+
+##### Esempio: 3 thumbnail per riga
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-auto-width-three' />
+</Preview>
+
+##### Esempio: 5 thumbnail per riga
+
+<Preview>
+  <Story id='componenti-thumbnav--esempio-auto-width-five' />
+</Preview>
+
+## Argomenti componente
+
+### ThumbNav
+
+<ArgsTable of={ThumbNav} />
+
+### ThumbNavItem
+
+<ArgsTable of={ThumbNavItem} />

@@ -114,7 +114,7 @@ $ yarn install react react-dom
 Clona il repository ed esegui `yarn` per installare le dipendenze.
 Quindi esegui `yarn storybook:serve` per avviare il server di sviluppo.
 
-Storybook sarà quindi disponibile all'indirizzo http://localhost:9001/
+Storybook sarà quindi disponibile all'indirizzo http://localhost:6006/
 
 ![storybook](/assets/storybook-screenshot.jpg?raw=true)
 

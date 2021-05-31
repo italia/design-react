@@ -4,7 +4,9 @@ node_modules
 # Outputs
 storybook-static
 dist/
-
+.DS_Store
+.cache
+coverage
 
 # Logs
-npm-debug.log
+*.log

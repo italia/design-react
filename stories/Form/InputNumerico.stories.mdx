@@ -1,0 +1,37 @@
+import { ArgsTable, Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { Input } from '../../src';
+
+<Meta title='Documentazione/Form/Input Numerico' of={Input} />
+
+# Input Numerico
+
+### Campi input con bottoni per incrementare/decrementare valori numerici
+
+## Esempi
+
+La larghezza del campo predefinita è quella del suo contenitore, per limitare la larghezza alle dimensioni del valore contenuto utilizzare il ridimensionamento adattivo.
+
+<Canvas>
+  <Story id='componenti-form-input--input-numerico-dimensionamento' />
+</Canvas>
+
+## Limiti e Step
+
+Aggiungendo le `props` `min`, `max` e `step` al componente `Input` è possibile limitare il valore minimo e massimo del campo e decidere di quanto varierà a ogni click sui bottoni.
+
+<Canvas>
+  <Story id='componenti-form-input--input-numerico-steps' />
+</Canvas>
+
+## Disabilitato
+
+Per disabilitare un Input number, aggiungere la _prop_ `disabled `al componente `Input`.
+
+<Canvas>
+  <Story id='componenti-form-input--input-numerico-disabilitato' />
+</Canvas>
+
+## Argomenti componente
+
+<ArgsTable of={Input} />

@@ -1,0 +1,31 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import { Skiplink, SkiplinkItem } from '../../src';
+
+<Meta title='Documentazione/Menu di navigazione/Skiplink' of={Skiplink} />
+
+# Skiplinks
+
+## Gli Skiplink sono collegamento interno alla pagina che consentono agli utenti di accedere direttamente al contenuto principale della pagina saltando il menu di navigazione.
+
+È un componente particolarmente utile per coloro che accedono con screen reader e/o da tastiera.
+
+Gli elementi `SkiplinkItem` sono contraddistinti dalle classi:
+
+- `sr-only`: renderizzati solo per gli screen reader. Sempre applicato.
+- `sr-only-focusable`: renderizzati solo al focus. Controllato dall'attributo `focusable`.
+
+Per attivare la funzionalità si digita da tastiera il tasto: TAB.
+
+<Preview>
+  <Story id='componenti-skiplink--esempi' />
+</Preview>
+
+## Argomenti componente
+
+### Skiplink
+
+<ArgsTable of={Skiplink} />
+
+### SkiplinkItem
+
+<ArgsTable of={SkiplinkItem} />
